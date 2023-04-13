@@ -40,3 +40,5 @@ const EntryIncome = (props) => {
 }
  
 export default EntryIncome;
+
+/////Hola! si esto esta es que se subio canchero 2/////
