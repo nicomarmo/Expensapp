@@ -11,6 +11,7 @@ const ExpensesTable = (props) => {
         <tr>
             <th>Total</th>
             <th>Description</th>
+            <th>Date</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -21,6 +22,7 @@ const ExpensesTable = (props) => {
                         <tr key={expense.id}>
                             <td>$ {expense.bill}</td>
                             <td>{expense.description}</td>
+                            <td>{expense.date}</td>
                             <td>
                             <button className="button muted-button"
                             onClick={() => {props.editRow(expense)}}>Edit</button>

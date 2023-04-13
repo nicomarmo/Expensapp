@@ -10,6 +10,7 @@ const EditExpenseForm = (props) => {
     useEffect(()=>{
         setValue('bill', props.currentExpense.bill);
         setValue('description', props.currentExpense.description);
+        setValue('date', props.currentExpense.date);
     }, [props.currentExpense, setValue]);
 
     const onSubmit = (data, e) => {
@@ -41,7 +42,14 @@ const EditExpenseForm = (props) => {
                     {errors?.description?.message}
                 </div>
 
-                <button>Add new Bill</button>
+                <label>Date</label>
+                <input type="date" name='date'
+                {...register('date',{required : true, message: 'campo obligatorio'})} />
+                <div>
+                    {errors?.date?.message}
+                </div>
+
+                <button>Edit</button>
             </form>
         </Fragment>
      );

@@ -16,10 +16,10 @@ const AddBillForm = (props) => {
     return ( 
         <Fragment>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                <label>Bill</label>
-                <input type="text" name="bill"
-                {...register('bill',{required : true, message: 'campo obligatorio'})} />
-
+                <label>Amount</label>
+                <input type="number" name="bill" step="any"
+                {...register('bill',{required : true, message: 'campo obligatorio'})}
+                {...register("bill", { min: 0 })} />
                 <div>
                     {errors?.bill?.message}
                 </div>
@@ -27,12 +27,18 @@ const AddBillForm = (props) => {
                 <label>Description</label>
                 <input type="text" name="description"
                 {...register('description',{required : true, message: 'campo obligatorio'})} />
-
                 <div>
                     {errors?.description?.message}
                 </div>
 
-                <button>Add new Bill</button>
+                <label>Date</label>
+                <input type="date" name='date'
+                {...register('date',{required : true, message: 'campo obligatorio'})} />
+                <div>
+                    {errors?.date?.message}
+                </div>
+
+                <button>Add</button>
             </form>
         </Fragment>
      );
