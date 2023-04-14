@@ -56,6 +56,22 @@ function App() {
     income.id = uuidv4()
     setIncome([...incomes, income])}
     console.log(incomes)
+  
+
+
+  //Delete Incomes
+  const deleteIncomes = (id) => {
+    console.log(id)
+
+    const arrayFilter = incomes.filter(income => income.id !== id);
+
+    setIncome(arrayFilter);
+  }
+
+
+
+
+
 
   return (
     <div className='conteiner'>
@@ -73,14 +89,14 @@ function App() {
                 <div>
                 <h2>Expenses</h2>
                 <AddBillForm addExpense={addExpense}/>
-                <EntryIncome incomes={incomes} addIncome={addIncome} />
+                <EntryIncome incomes={incomes} addIncome={addIncome} expenses={expenses} addExpense={addExpense}/>
               </div>
               )
             }
       </div>
         <div className="flex-large">
           <h2>View Movements</h2>
-            <ExpensesTable expenses={expenses} deleteExpense={deleteExpense} editRow={editRow}/>
+            <ExpensesTable expenses={expenses} deleteExpense={deleteExpense} deleteIncomes={deleteIncomes} editRow={editRow} incomes={incomes} />
         </div>
       </div>
     </div>
@@ -90,5 +106,3 @@ function App() {
 
 export default App;
 
-
-/////Hola! si esto esta es que se subio canchero/////
