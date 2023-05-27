@@ -1,5 +1,6 @@
 import React, {Fragment, useEffect} from 'react'
 import {useForm} from 'react-hook-form'
+import Estilos from '../Styles/Inputs.module.css'
 
 const EditExpenseForm = (props) => {
 
@@ -27,7 +28,7 @@ const EditExpenseForm = (props) => {
         <Fragment>
                 <form onSubmit={handleSubmit(onSubmit)}>
                 <label>Bill</label>
-                <input type="text" name="bill"
+                <input className= {Estilos.inputG} type="text" name="bill"
                 {...register('bill',{required : true, message: 'campo obligatorio'})} />
 
                 <div>
@@ -35,7 +36,7 @@ const EditExpenseForm = (props) => {
                 </div>
 
                 <label>Description</label>
-                <input type="text" name="description"
+                <input className= {Estilos.inputG} type="text" name="description"
                 {...register('description',{required : true, message: 'campo obligatorio'})} />
 
                 <div>
@@ -43,7 +44,7 @@ const EditExpenseForm = (props) => {
                 </div>
 
                 <label>Date</label>
-                <input type="date" name='date'
+                <input className= {Estilos.inputG} type="date" name='date'
                 {...register('date',{required : true, message: 'campo obligatorio'})} />
                 <div>
                     {errors?.date?.message}

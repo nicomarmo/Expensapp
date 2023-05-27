@@ -1,5 +1,4 @@
 import React from 'react'
-
 const ExpensesTable = (props) => {
 
 
@@ -28,7 +27,8 @@ const ExpensesTable = (props) => {
                             <button className="button muted-button"
                             onClick={() => {props.editRow(expense)}}>Edit</button>
 
-                            <button className="button muted-button">Delete</button>
+                            <button className="button muted-button"
+                            onClick={()=>{props.deleteExpense(expense.id)}}>Delete</button>
                             </td>
                         </tr>
                 )) : (

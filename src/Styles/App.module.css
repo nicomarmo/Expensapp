@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(21, 41, 58);
+}
+
+.titulo_general{
+    display: flex;
+    justify-content: center;
+    color: white
+}
+
+.div_recuadro{
+    background-color: bisque;
+    margin: 10px 400px 0px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+

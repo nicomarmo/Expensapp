@@ -4,6 +4,7 @@ import ExpensesTable from './components/ExpensesTable';
 import AddBillForm from './components/AddBillForm';
 import EditExpenseForm from './components/EditExpenseForm';
 import EntryIncome from './components/EntryIncome';
+import Estilos from './Styles/App.module.css'
 
 
 function App() {
@@ -75,7 +76,8 @@ function App() {
 
   return (
     <div className='conteiner'>
-      <h1>Expenses App</h1>
+      <h1 className={Estilos.titulo_general}>Expenses App</h1>
+      <div className={Estilos.div_recuadro}>
       <div className="container">      
       <div className="flex-row">
         <div className="flex-large">
@@ -99,6 +101,7 @@ function App() {
             <ExpensesTable expenses={expenses} deleteExpense={deleteExpense} deleteIncomes={deleteIncomes} editRow={editRow} incomes={incomes} />
         </div>
       </div>
+    </div>
     </div>
     </div>
   );

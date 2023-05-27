@@ -1,5 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import Estilos from '../Styles/Inputs.module.css'
+
 const EntryIncome = (props) => {
 
     const onSubmit = (data, e) => {
@@ -31,19 +33,19 @@ const EntryIncome = (props) => {
         <Fragment>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label><h2>Income</h2></label>
-                <input type="number" name="income" step="any" min='0' defaultValue=''
+                <input className= {Estilos.inputG} type="number" name="income" step="any" min='0' defaultValue=''
                 {...register('income',{required : true, message: 'campo obligatorio'})}
                 {...register("income", { min: 0 })} />
                 
                 <label>Description</label>
-                <input type="text" name="description"
+                <input className= {Estilos.inputG} type="text" name="description"
                 {...register('description',{required : true, message: 'campo obligatorio'})} />
                 <div>
                     {errors?.description?.message}
                 </div>
 
                 <label>Date</label>
-                <input type="date" name='date'
+                <input className= {Estilos.inputG} type="date" name='date'
                 {...register('date',{required : true, message: 'campo obligatorio'})} />
                 <div>
                     {errors?.date?.message}
